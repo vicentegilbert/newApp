@@ -1,1 +1,14 @@
-<ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;"></ion-content>
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgba(0, 0, 0, 0.7); color: white;">
+    <ion-title>Bienvenido: {{user.name | titlecase}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;">
+
+</ion-content>
