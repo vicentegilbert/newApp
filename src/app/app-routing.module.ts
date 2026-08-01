@@ -28,6 +28,10 @@ const routes: Routes = [
     canActivate: [guestGuard],
     loadChildren: () => import('./pages/recover/recover.module').then( m => m.RecoverPageModule)
   },
+  {
+    path: '**',
+    redirectTo: 'home'
+  },
 ];
 @NgModule({
   imports: [

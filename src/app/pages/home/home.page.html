@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="--background: rgba(0, 0, 0, 0.7); color: white;">
+  <ion-toolbar>
     <ion-title>Bienvenido: {{user.name | titlecase}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="logout()">
@@ -11,10 +11,22 @@
 
 <ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;">
   <ion-tabs >
-    <ion-tab-bar slot="bottom" style="--background: rgba(0, 0, 0, 0.7); color: white;">
+    <ion-tab-bar slot="bottom">
       <ion-tab-button tab="profile" routerLink="/home/profile" routerDirection="forward" >
         <ion-icon name="person-circle-outline"></ion-icon>
         <ion-label >Perfil</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="orders" routerLink="/home/orders" routerDirection="forward">
+        <ion-icon name="receipt-outline"></ion-icon>
+        <ion-label>Pedidos</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tables" routerLink="/home/tables" routerDirection="forward">
+        <ion-icon name="grid-outline"></ion-icon>
+        <ion-label>Mesas</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="kitchen" routerLink="/home/kitchen" routerDirection="forward">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <ion-label>Cocina</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

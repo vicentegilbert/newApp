@@ -19,12 +19,48 @@ export class UserService {
       "lastName":"",
       "gender": "Masculino",
       "dateOfBirth": "2006-06-06",
-      "email": "admin@duocuc.cl",
+      "email": "admin@gmail.com",
       "password": "admin123456",
       "confirmPassword": "admin123456",
       "userType": "admin",
     };
+    let cocina = {
+      "rut": "22222222-2",
+      "name": "cocina",
+      "lastName":"",
+      "gender": "Masculino",
+      "dateOfBirth": "2000-06-06",
+      "email": "cocina@gmail.com",
+      "password": "cocina123456",
+      "confirmPassword": "cocina123456",
+      "userType": "kitchen",
+    };
+    let waiter = {
+      "rut": "33333333-3",
+      "name": "waiter",
+      "lastName":"",
+      "gender": "Masculino",
+      "dateOfBirth": "2000-06-06",
+      "email": "waiter@gmail.com",
+      "password": "waiter123456",
+      "confirmPassword": "waiter123456",
+      "userType": "waiter",
+    };
+    let bartender = {
+      "rut": "44444444-4",
+      "name": "bartender",
+      "lastName":"",
+      "gender": "Masculino",
+      "dateOfBirth": "2000-06-06",
+      "email": "bartender@gmail.com",
+      "password": "bartender123456",
+      "confirmPassword": "bartender123456",
+      "userType": "bartender",
+    };
     await this.createUser(admin);
+    await this.createUser(cocina);
+    await this.createUser(waiter);
+    await this.createUser(bartender);
   }
 
   public async createUser(user:any): Promise<boolean>{

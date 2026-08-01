@@ -12,6 +12,18 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
   },
+  {
+    path: 'orders',
+    loadChildren: () => import('../orders/orders.module').then(m => m.OrdersPageModule)
+  },
+  {
+    path: 'tables',
+    loadChildren: () => import('../tables/tables.module').then(m => m.TablesPageModule)
+  },
+  {
+    path: 'kitchen',
+    loadChildren: () => import('../kitchen/kitchen.module').then(m => m.KitchenPageModule)
+  },
 ];
 
 @NgModule({
