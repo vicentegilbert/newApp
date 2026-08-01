@@ -1,1 +1,44 @@
-<ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;"></ion-content>
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgba(0, 0, 0, 0.7); color: white;">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/login" style="color: white;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;">
+    <div style="display: flex; justify-content: center; align-items: center; height: auto; padding-bottom: 50px;">
+        <ion-card style="margin-top: 30px; background-color: rgba(0, 0, 0, 0.7); color: white; width: 90%; max-width: 500px;">
+            <ion-card-header style="color: white">Registro de Usuario</ion-card-header>
+            <ion-card-content>
+                <form [formGroup]="user" (ngSubmit)="register()">
+                    <ion-input formControlName="rut" type="text" labelPlacement="stacked" label="RUT" placeholder="Ingresa tu RUT" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-input formControlName="name" type="text" labelPlacement="stacked" label="Nombre" placeholder="Ingresa tu nombre" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-input formControlName="lastName" type="text" labelPlacement="stacked" label="Apellido" placeholder="Ingresa tu apellido" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-select formControlName="gender" labelPlacement="stacked" label="Género" fill="outline" style="width: 100%; margin-bottom: 15px;">
+                        <ion-select-option value="masculino">Masculino</ion-select-option>
+                        <ion-select-option value="femenino">Femenino</ion-select-option>
+                        <ion-select-option value="otro">Otro</ion-select-option>
+                    </ion-select>
+                    <ion-input formControlName="dateOfBirth" type="date" labelPlacement="stacked" label="Fecha de nacimiento" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-input formControlName="email" type="email" labelPlacement="stacked" label="Correo Electrónico" placeholder="Ingresa tu correo" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-input 
+                        formControlName="password" 
+                        [type]="showPassword ? 'text' : 'password'" 
+                        labelPlacement="stacked" 
+                        label="Contraseña" 
+                        placeholder="Ingresa tu contraseña"
+                        fill="outline"
+                        style="width: 100%; margin-bottom: 15px;">
+                        <ion-button fill="clear" slot="end" (click)="togglePasswordVisibility()">
+                        <ion-icon [name]="showPassword ? 'eye' : 'eye-off'"></ion-icon>
+                        </ion-button>
+                    </ion-input>
+                    <ion-input formControlName="confirmPassword" type="password" labelPlacement="stacked" label="Confirmar Contraseña" placeholder="Confirma tu contraseña" fill="outline" style="width: 100%; margin-bottom: 15px;"></ion-input>
+                    <ion-button [disabled]="user.invalid" type="submit" size="block" style="--background: rgb(159,183,64,255);">REGISTRAR</ion-button>
+                </form>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
+  
