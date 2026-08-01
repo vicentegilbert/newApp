@@ -19,11 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'profile',
-    canActivate: [authGuard],
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
-  },
-  {
     path: 'register',
     canActivate: [guestGuard],
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)

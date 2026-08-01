@@ -10,5 +10,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" style="--background: url('assets/images/fondo-login.png') no-repeat center center / cover;">
-
+  <ion-tabs >
+    <ion-tab-bar slot="bottom" style="--background: rgba(0, 0, 0, 0.7); color: white;">
+      <ion-tab-button tab="profile" routerLink="/home/profile" routerDirection="forward" >
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label >Perfil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
